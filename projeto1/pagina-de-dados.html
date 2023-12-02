@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Formulário</title>
+    <link rel="stylesheet" href="paginaDados.css">
+</head>
+
+<body>
+    <h1>Dados Enviados</h1>
+    <ul id="dados-enviados"></ul>
+    <div class="back-button-container">
+        <a href="formulario.html" class="back-button">Voltar ao Formulário</a>
+    </div>
+    <script>
+      function mostrarDados() {
+            var dados = localStorage.getItem('dadosFormulario');
+            if (dados) {
+                var dadosObj = JSON.parse(dados);
+                var lista = document.getElementById('dados-enviados');
+
+                // Criar um novo item de lista para cada envio
+                var item = document.createElement('li');
+                item.textContent = `Data de Envio: ${dadosObj.dataEnvio}, Nome: ${dadosObj.nome}, Email: ${dadosObj.email}`;
+                lista.appendChild(item);
+            } else {
+                var lista = document.getElementById('dados-enviados');
+                lista.innerHTML = '<li>Nenhum dado foi enviado.</li>';
+            }
+        }
+
+        function excluirItem(index) {
+            var dados = JSON.parse(localStorage.getItem('dadosFormulario')) || [];
+            dados.splice(index, 1);
+            localStorage.setItem('dadosFormulario', JSON.stringify(dados));
+            mostrarDados(); // Atualiza a lista na tela
+        }
+
+        window.onload = mostrarDados;
+    </script>
+</body>
+</html>

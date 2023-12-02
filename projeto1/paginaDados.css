@@ -1,0 +1,62 @@
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Fundo escuro */
+            color: #ffffff; /* Texto claro */
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    
+        h1 {
+            text-align: center;
+            color: #0d6efd; /* Azul claro */
+        }
+    
+        #dados-enviados {
+            background-color: #232323; /* Fundo um pouco mais claro que o do body */
+            color: #ffffff; /* Texto claro */
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        }
+    
+        p {
+            font-size: 1em;
+            margin-bottom: 0.5rem;
+            padding: 0.375rem 0;
+            border-bottom: 1px solid #343a40; /* Divisor sutil */
+        }
+    
+        p strong {
+            color: #0d6efd; /* Azul claro para destaque */
+        }
+    
+        .back-button {
+            display: inline-block;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            color: #ffffff; /* Texto claro */
+            background-color: #0d6efd; /* Azul claro */
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background-color 0.15s ease-in-out;
+        }
+    
+        .back-button:hover {
+            background-color: #1a5cb8; /* Azul um pouco mais escuro */
+        }
+    
+      /* Ajuste de responsividade */
+        @media (max-width: 768px) {
+            #dados-enviados {
+                width: 90%;
+                padding: 1rem;
+            }
+        }
+ 
